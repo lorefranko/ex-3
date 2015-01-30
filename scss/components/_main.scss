@@ -19,7 +19,7 @@ html {
 
 
 body{
-  font-family: sans-serif;
+  font-family: 'futura' sans-serif;
   @include zero;
   // Hides close button if there is no js
   &.noscript .close-btn,
@@ -37,21 +37,27 @@ header {
   position: absolute;
   right: 1em;
   top: 0;
+  &:hover {
+  color: #fff;
+  }
 }
 
 .navigation ul{
   @include zero;
   li{
     list-style-type: none;
+    padding: 1%;
     a{
       display: block;
       padding: .5em 1em;
       text-align: center;
       border-bottom: 1px solid $light-grey;
       text-decoration: none;
+      background: $bg-navigation;
+      color: $text-nav;
     }
-    &:first-child a{
-      border-top: 1px solid $light-grey;
+    &:hover a{
+      color: $nav-hover;
     }
   }
 }
@@ -62,11 +68,14 @@ header {
   height: 40px;
   width: 40px;
   i{
-    border: 1px solid $text-color;
+    background-color: $close-nav-button;
     padding: .5em;
   }
   span{
     @include hide-text;
+  }
+    &:hover {
+  color: #fff;
   }
 }
 
@@ -119,5 +128,9 @@ header {
   .slide-menue{
     position: static;
     right: auto;
+  }
+
+  .navigation{
+    float: left;
   }
 }
